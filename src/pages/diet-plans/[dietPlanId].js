@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
+import Layout from '../../components/Layout';
 
 const DietPlanCardInfo = () => {
   const router = useRouter();
@@ -33,6 +34,7 @@ const DietPlanCardInfo = () => {
   if (!dietPlan) return null; // Or render a placeholder or loading state
 
   return (
+    <Layout>
     <div className="container mx-auto px-4 py-8">
       <div className="bg-white shadow-md rounded-lg p-6">
         <h2 className="text-2xl font-semibold mb-4">{dietPlan.title}</h2>
@@ -58,6 +60,7 @@ const DietPlanCardInfo = () => {
         </div>
       </div>
     </div>
+    </Layout>
   );
 };
 
